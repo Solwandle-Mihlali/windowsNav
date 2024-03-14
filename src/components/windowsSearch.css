@@ -1,0 +1,76 @@
+.winSearchCont {
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0; /* Start with opacity 0 */
+  animation: slideUp 1s ease-in-out forwards; /* 1s duration instead of 1ms */
+  transition: opacity 0.5s; /* Opacity transition duration */
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+
+.winSearchCont form {
+  height: 70%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  padding-top: 1em;
+  border-radius: 10px;
+  background: var(--gradientBg);
+  backdrop-filter: blur(20px);
+  margin-bottom: 0.5rem;
+}
+
+.winSearchCont form input {
+  height: 4%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 1rem;
+  background: white;
+  font-size: 0.7rem;
+  outline: none;
+  border: none;
+  padding-left: 1rem;
+}
+
+.recentAPppCOntainers {
+  display: none;
+  border: solid red 1px;
+  min-height: 40vh;
+  width: 90%;
+}
+
+.pinnedAppsSection {
+  width: 90%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pinnedAppsSection .pinnedAppsSectionChildren {
+  display: none;
+  border: solid red 1px;
+  width: 50%;
+  height: 95%;
+}
