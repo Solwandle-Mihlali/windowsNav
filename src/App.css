@@ -6,7 +6,7 @@ html ::-webkit-scrollbar {
 
 /*vartiables*/
 :root{
-  --gradientBg :rgba(153, 153, 153, 0.171);
+  --gradientBg :rgb(255, 255, 255);
   --tBarChildrenBottomMargin : 6%;
   --tBarChildBorderRadius : 0px;
 }
