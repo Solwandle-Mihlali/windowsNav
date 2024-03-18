@@ -6,7 +6,7 @@ import Youtube from "./yt";
 import { Configuration } from "../config";
 
 const TaskBar: React.FC = () => {
-  const api_key = Configuration.YT_API_KEY;
+ 
   //hidden components
   const [showWindowSearch, setShowWindowSearch] = useState(false);
   const [chevronUpActive, setChevronUpActive] = useState(false);
@@ -15,26 +15,7 @@ const TaskBar: React.FC = () => {
   const [backgroundAppsArr, setBackgroundAppsArr] = useState<Array<string>>([]);
 
   //fetching a storing yt data
-  useEffect(() => {
-    const fetchYoutubeData = async () => {
-        try {
-            const response = await fetch(
-                `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UCZGSIqguQ-g6DNf32zqu9NQ&key=${api_key}`
-            );
-
-            if (response.ok) { // Use response.ok for HTTP status check
-                const data = await response.json();
-                console.log(data); // Access parsed data instead of response.body
-            } else {
-                console.error("Failed to fetch YouTube data:", response.statusText);
-            }
-        } catch (error) {
-            console.error("Error fetching YouTube data:", error);
-        }
-    };
-
-    fetchYoutubeData();
-}, []); // Empty dependency array to run only on mount
+ // Empty dependency array to run only on mount
 
   //useEffect to ensure only one div is visible at a time
 

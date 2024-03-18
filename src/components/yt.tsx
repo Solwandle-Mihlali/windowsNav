@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./yt.css";
-import { icons } from "../icons/icons";
+import { icons, youtubeThumbnails } from "../icons/icons";
+import { Configuration } from "../config";
 
 interface YoutubeProps {
   isVisible: boolean;
@@ -8,9 +9,32 @@ interface YoutubeProps {
 
 const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
   const [ytHeight, setYtHeight] = useState(90);
-  const [ytVisibility, setYtVisibility] = useState(false);
   const [darkModeActiveState, setDarkModeActiveState] = useState(false);
   const [darkBg, setDarkBg] = useState("#131d2e");
+  const api_key = Configuration.YT_API_KEY;
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const fetchYoutubeData = async () => {
+      try {
+        const response = await fetch(
+          `GET https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&key=${api_key}`
+        );
+
+        if (response.ok) {
+          // Use response.ok for HTTP status check
+          const data = await response.json();
+          console.log(data); // Access parsed data instead of response.body
+        } else {
+          console.error("Failed to fetch YouTube data:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching YouTube data:", error);
+      }
+    };
+
+    fetchYoutubeData();
+  }, []);
 
   useEffect(() => {
     if (darkModeActiveState === true) {
@@ -25,6 +49,31 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
     icons.yourVideos,
     icons.yourHistory,
     icons.yourLikes,
+  ];
+
+  const dummyThumbNails = [
+    {
+      img: youtubeThumbnails.thumbThree,
+      title: "REACT | A PRACTICAL PROJECT",
+      channel: "SemiColon_00",
+      views: 944,
+      uploaded: "6 hours ago",
+    },
+    {
+      img: youtubeThumbnails.thumbone,
+      title: "FREELANCING 101",
+      channel: "Free Freelance",
+      views: 53,
+      uploaded: "3 weeks ago",
+    },
+    {
+      img: youtubeThumbnails.thumbTwo,
+      title: "SECRETS TO FRONTEND MASTERY",
+      channel: "Secrets Channel",
+      views: 5,
+      uploaded: " 30 mins ago",
+    },
+  
   ];
 
   const suggestionItems = [
@@ -43,8 +92,8 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
     "Afro Beats",
     "Recent",
     "Watched",
-    "New to you"
-  ]
+    "New to you",
+  ];
   return (
     <>
       {isVisible && (
@@ -63,7 +112,12 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
               </span>
             </div>
             <label htmlFor="#" className="searchSection">
-              <input type="text" placeholder="Search" />
+              <input
+                type="text"
+                placeholder="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
               <span className="ytVoiceRecognition">
                 <img src={icons.ytMic} alt="ytMic" />
               </span>
@@ -113,7 +167,11 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
                           ? "History"
                           : ind == 2
                           ? "Your Videos"
-                          : ind === 3 ? "Watch Later" : ind == 4 ? "Like Videos" : " "}
+                          : ind === 3
+                          ? "Watch Later"
+                          : ind == 4
+                          ? "Like Videos"
+                          : " "}
                       </p>
                     </li>
                   );
@@ -121,21 +179,56 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
               </ul>
             </div>
             <div className="mainContent">
-           
-                <ul>
-                  {
-                    suggestionItems?.map((vals,index)=>{
-                      return(
-                        <li key={index}>
+              <ul>
+                {suggestionItems?.map((vals, index) => {
+                  return <li key={index}>{vals}</li>;
+                })}
+              </ul>
+              <div className="youtubeContentSection">
+                {dummyThumbNails?.map((val, ind) => {
+                  return (
+                    <div className="thumbnail" key={ind}>
+                      <img src={val.img} alt="thumbNail" />
+                      <div className="channelInfo">
+                        <span className="imgSection">
+                          <img src={val.img}
+                           alt="" />
+                        </span>
+                        <div className="infoSection">
+                        <h2 className="title">
+                        {
+                          val.title
+                        }
+                       </h2>
+                       <h3>
+                        {
+                          val.channel
+                        }
+                       </h3>
+                      <div className="views">
+                        <span>
                           {
-                            vals
+                            val.views
                           }
-                        </li>
-                      )
-                    })
-                  }
-                </ul>
-       
+                          {
+                            ind == 1 ? "m" : ind == 0 ? " " : "k"
+                          }
+                          {" "}
+                          views
+                           <span></span>
+                          {
+                            val.uploaded
+                          }
+                        </span>
+                      
+                      </div>
+                        </div>
+                      </div>
+                       
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </main>
         </div>

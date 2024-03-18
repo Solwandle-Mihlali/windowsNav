@@ -9,6 +9,7 @@ html ::-webkit-scrollbar {
   --gradientBg :rgb(255, 255, 255);
   --tBarChildrenBottomMargin : 6%;
   --tBarChildBorderRadius : 0px;
+  --youtubeChannelName :rgba(70, 70, 70, 0.584);
 }
 
 #root {

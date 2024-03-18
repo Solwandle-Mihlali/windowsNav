@@ -38,6 +38,9 @@ import yourChannel from "./yourChannel.png";
 import yourHistory from "./yourHistory.png";
 import yourVideos from "./yourVideos.png";
 import yourLikes from "./yourLikes.png";
+import thumbOne from "./thumbOne.png";
+import thumbTwo from "./thumbTwo.png";
+import thumbThree from "./thumbThree.jpg";
 
 
 
@@ -86,3 +89,13 @@ export const images = {
   chartGreen: chartGreen,
   chartRed: chartRed,
 };
+
+
+export const youtubeThumbnails = {
+
+
+  thumbone : thumbOne,
+  thumbTwo : thumbTwo,
+  thumbThree : thumbThree
+
+}
