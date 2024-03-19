@@ -73,6 +73,34 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
       views: 5,
       uploaded: " 30 mins ago",
     },
+    {
+      img: youtubeThumbnails.thumbFour,
+      title: "THE AI REVOLUTION",
+      channel: "AI Channel",
+      views: 5,
+      uploaded: "2 years ago",
+    },
+    {
+      img: youtubeThumbnails.thumbFive,
+      title: "Blog Boosting",
+      channel: "Bloggers Channel",
+      views: 65,
+      uploaded: "1 year ago",
+    },
+    {
+      img: youtubeThumbnails.thumbSix,
+      title: "Corporate tips",
+      channel: "Corporate Channel",
+      views: 5,
+      uploaded: "1 year ago",
+    },
+    {
+      img: youtubeThumbnails.thumbSeven,
+      title: "Blog Boosting",
+      channel: "Dark Facts Channel",
+      views: 53,
+      uploaded: "20 mins ago",
+    },
   
   ];
 

@@ -1,15 +1,14 @@
-
 /*hidding scrollbar*/
 html ::-webkit-scrollbar {
   display: none;
 }
 
 /*vartiables*/
-:root{
-  --gradientBg :rgb(255, 255, 255);
-  --tBarChildrenBottomMargin : 6%;
-  --tBarChildBorderRadius : 0px;
-  --youtubeChannelName :rgba(70, 70, 70, 0.584);
+:root {
+  --gradientBg: rgb(255, 255, 255);
+  --tBarChildrenBottomMargin: 6%;
+  --tBarChildBorderRadius: 0px;
+  --youtubeChannelName: rgba(70, 70, 70, 0.584);
 }
 
 #root {
@@ -22,5 +21,3 @@ html ::-webkit-scrollbar {
   padding: 0;
   margin: 0;
 }
-
-

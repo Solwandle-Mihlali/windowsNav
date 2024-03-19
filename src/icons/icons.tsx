@@ -41,7 +41,10 @@ import yourLikes from "./yourLikes.png";
 import thumbOne from "./thumbOne.png";
 import thumbTwo from "./thumbTwo.png";
 import thumbThree from "./thumbThree.jpg";
-
+import thumbFour from "./thumbFour.png";
+import thumbFive from "./thumbFive.png";
+import thumbSix from "./thumbSix.png";
+import thumbSeven from "./thumbSeven.png";
 
 
 export const icons = {
@@ -72,11 +75,11 @@ export const icons = {
   ytMic: ytMic,
   toggleDark: toggleDark,
   toggleLight: toggleLight,
-  subscriptions : subscriptions,
+  subscriptions: subscriptions,
   yourChannel: yourChannel,
   yourHistory: yourHistory,
   yourVideos: yourVideos,
-  yourLikes: yourLikes
+  yourLikes: yourLikes,
 };
 
 export const images = {
@@ -90,12 +93,13 @@ export const images = {
   chartRed: chartRed,
 };
 
-
 export const youtubeThumbnails = {
+  thumbone: thumbOne,
+  thumbTwo: thumbTwo,
+  thumbThree: thumbThree,
+  thumbFour: thumbFour,
+  thumbFive: thumbFive,
+  thumbSix: thumbSix,
+  thumbSeven: thumbSeven,
 
-
-  thumbone : thumbOne,
-  thumbTwo : thumbTwo,
-  thumbThree : thumbThree
-
-}
+};
