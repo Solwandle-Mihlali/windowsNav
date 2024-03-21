@@ -45,6 +45,9 @@ import thumbFour from "./thumbFour.png";
 import thumbFive from "./thumbFive.png";
 import thumbSix from "./thumbSix.png";
 import thumbSeven from "./thumbSeven.png";
+import whatsApp from "./whatsapp.png";
+import tiktok from "./tiktok.png";
+import google from "./google.png"
 
 
 export const icons = {
@@ -80,6 +83,9 @@ export const icons = {
   yourHistory: yourHistory,
   yourVideos: yourVideos,
   yourLikes: yourLikes,
+  whatsApp: whatsApp,
+  tiktok: tiktok,
+  google:google
 };
 
 export const images = {

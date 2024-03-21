@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./yt.css";
 import { icons, youtubeThumbnails } from "../icons/icons";
 import { Configuration } from "../config";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 interface YoutubeProps {
   isVisible: boolean;
@@ -10,10 +11,10 @@ interface YoutubeProps {
 const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
   const [ytHeight, setYtHeight] = useState(90);
   const [darkModeActiveState, setDarkModeActiveState] = useState(false);
-  const [darkBg, setDarkBg] = useState("#131d2e");
+  const [darkModeClass, setDarkModeClass] = useState("youtube-container")
   const api_key = Configuration.YT_API_KEY;
   const [searchQuery, setSearchQuery] = useState("");
-
+  
   useEffect(() => {
     const fetchYoutubeData = async () => {
       try {
@@ -35,12 +36,15 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
 
     fetchYoutubeData();
   }, []);
-
+  
+  //setting dark mode logic 
   useEffect(() => {
-    if (darkModeActiveState === true) {
-      setDarkBg("#131d2e");
-    }
-  }, [darkModeActiveState, setDarkBg]);
+     if(darkModeActiveState == true ){
+      setDarkModeClass("youtube-container-dark")
+     }
+     else(setDarkModeClass("youtube-container"))
+  }, [darkModeActiveState,setDarkModeClass]);
+  
 
   const sidePanelItems = [icons.home, icons.shorts, icons.subscriptions];
   const sidePanelYouItems = [
@@ -51,6 +55,7 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
     icons.yourLikes,
   ];
 
+ 
   const dummyThumbNails = [
     {
       img: youtubeThumbnails.thumbThree,
@@ -104,6 +109,22 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
   
   ];
 
+  const quickAccess = [
+    {
+      img : icons.whatsApp
+    },
+    {
+      img : icons.tiktok
+    },
+    {
+      img : icons.excel
+    },
+    {
+      img: icons.word
+    }
+    
+  ]
+
   const suggestionItems = [
     "All",
     "Boxing",
@@ -126,9 +147,18 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
     <>
       {isVisible && (
         <div
-          className="youtube-container"
-          style={{ height: `${ytHeight}` + "vh", background: `#${darkBg}` }}
+          className={`${darkModeClass}`}
+          style={{ height: `${ytHeight}` + "vh"}}
         >
+          <div className="otherAppQuickAcces">
+            
+            {
+              quickAccess?.map((val,ind)=>{
+                return <img key={ind} src={val.img} alt="" />
+              })
+            }
+            
+          </div>
           <div className="ytHeader">
             <div className="logoSection">
               <span>
@@ -146,7 +176,7 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <span className="ytVoiceRecognition">
+              <span className="ytVoiceRecognition" >
                 <img src={icons.ytMic} alt="ytMic" />
               </span>
             </label>
@@ -168,7 +198,7 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
               <ul>
                 {sidePanelItems?.map((vals, ind) => {
                   return (
-                    <li key={ind}>
+                    <li key={ind} className={""}>
                       <img src={vals} alt="" />
                       <p>
                         {ind == 0
@@ -204,7 +234,14 @@ const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
                     </li>
                   );
                 })}
+                <li>
+                  <img src={icons.chevronDown} alt="" />
+                  <p>
+                    Easy Access
+                  </p>
+                </li>
               </ul>
+             
             </div>
             <div className="mainContent">
               <ul>

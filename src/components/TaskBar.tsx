@@ -6,7 +6,6 @@ import Youtube from "./yt";
 import { Configuration } from "../config";
 
 const TaskBar: React.FC = () => {
- 
   //hidden components
   const [showWindowSearch, setShowWindowSearch] = useState(false);
   const [chevronUpActive, setChevronUpActive] = useState(false);
@@ -14,27 +13,12 @@ const TaskBar: React.FC = () => {
   const [youtubeSection, setShowYoutubeSection] = useState(false);
   const [backgroundAppsArr, setBackgroundAppsArr] = useState<Array<string>>([]);
 
-  //fetching a storing yt data
- // Empty dependency array to run only on mount
-
-  //useEffect to ensure only one div is visible at a time
-
-  {
-    /*
-     useEffect(() => {
-    if (chevronUpActive === true) {
-      setShowWindowSearch(false);
-      setShowConnectivitySection(false);
-    } else {
-      setShowWindowSearch(prevShowWindowSearch => prevShowWindowSearch);
-      setShowConnectivitySection(prevConnectivitySection => prevConnectivitySection);
-    }
-  }, [chevronUpActive, showWindowSearch, connectivitySection]);
-    */
-  }
-
   const handleTaskbarIconClick = (iconToAdd: string) => {
     console.log(iconToAdd);
+
+    backgroundAppsArr?.forEach((val, ind) => {
+      val.includes(iconToAdd);
+    });
     backgroundAppsArr.push(iconToAdd);
   };
   return (

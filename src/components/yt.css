@@ -6,6 +6,21 @@
   margin: 0;
   font-family: sans-serif;
 }
+
+.youtube-container-dark {
+  backdrop-filter: blur(20px);
+  background: var(--gradientBgDark);
+  box-shadow: 3px 3px 10px rgb(44, 44, 44);
+  border-radius: 10px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  animation: slideUp 1s ease-in-out forwards;
+  transition: opacity 0.5s background 3s;
+  margin-bottom: 2%;
+}
 .youtube-container {
   backdrop-filter: blur(20px);
   background: var(--gradientBg);
@@ -79,6 +94,7 @@
   border-radius: 10px;
   font-size: 0.7rem;
   padding-left: 0.7rem;
+  background: transparent;
 }
 .searchSection input:focus {
   outline: solid rgba(148, 0, 0, 0.238) 1px;
@@ -301,4 +317,33 @@ main .sidePanel ul {
   width: 4px;
   height: 4px;
   border-radius: 50%;
+}
+
+.otherAppQuickAcces {
+  min-height: 10vh;
+  max-height: 20vh;
+  overflow-y: auto;
+  width: 7%;
+  position: absolute;
+  left: 1%;
+  top: 63%;
+  border-radius: 10px;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: left;
+  justify-content: space-evenly;
+  row-gap: 3%;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.otherAppQuickAcces img {
+  background: rgba(188, 188, 188, 0);
+  width: 40%;
+  box-shadow: 2px 2px 5px rgba(117, 117, 117, 0.674),
+    2px 2px 7.5px rgba(53, 53, 53, 0.674);
+  border-radius: 50%;
+  padding: 0.3rem;
+  margin: 7%;
 }

@@ -3,14 +3,13 @@ import "./App.css";
 import TaskBar from "./components/TaskBar";
 
 
-
 interface MainAppProps {
   winSearchVisibility: boolean;
 }
 
-function App({ }: MainAppProps) {
+function App({}: MainAppProps) {
   return (
-<>
+    <>
       <TaskBar />
     </>
   );

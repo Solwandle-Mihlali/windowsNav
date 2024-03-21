@@ -5,10 +5,11 @@ html ::-webkit-scrollbar {
 
 /*vartiables*/
 :root {
-  --gradientBg: rgb(255, 255, 255);
+  --gradientBg: rgb(254, 254, 254);
+  --gradientBgDark: rgb(43, 41, 46);
   --tBarChildrenBottomMargin: 6%;
   --tBarChildBorderRadius: 0px;
-  --youtubeChannelName: rgba(70, 70, 70, 0.584);
+  --youtubeChannelName: rgba(144, 142, 142, 0.584);
 }
 
 #root {
