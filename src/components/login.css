@@ -1,0 +1,72 @@
+.loginMain{
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginMain form{
+    width: 20%;
+    border-radius: 10px;
+    height:40vh;
+    z-index: 2;
+    background: rgba(101, 101, 101, 0.336);
+    box-shadow: 3px 3px 10px rgba(27, 27, 27, 0.11), 3px 3px 10px rgba(27, 27, 27, 0.11);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    border: solid 1px rgb(208, 208, 208);
+}
+
+.loginMain form label{
+    width: 100%;
+    min-height: 3.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    gap: 1%;
+    font-weight: bold;
+}
+
+.loginMain form label input{
+    width:70%;
+    min-height: 3.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    background: transparent;
+    border: none;
+    border-bottom:solid 1px rgb(185, 185, 185) ;
+    padding-left: 10px;
+    gap: 1%;
+}
+
+input :focus{
+    border: none;
+    outline: none;
+}
+
+.loginMain form button {
+    width: 30%;
+    min-height: 4vh;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background:red ;
+    border: none;
+    gap: 1%;
+    border-radius: 5px;
+}

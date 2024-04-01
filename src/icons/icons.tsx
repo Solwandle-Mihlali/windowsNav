@@ -47,8 +47,7 @@ import thumbSix from "./thumbSix.png";
 import thumbSeven from "./thumbSeven.png";
 import whatsApp from "./whatsapp.png";
 import tiktok from "./tiktok.png";
-import google from "./google.png"
-
+import google from "./google.png";
 
 export const icons = {
   cloudy: cloudy,
@@ -85,7 +84,7 @@ export const icons = {
   yourLikes: yourLikes,
   whatsApp: whatsApp,
   tiktok: tiktok,
-  google:google
+  google: google,
 };
 
 export const images = {
@@ -107,5 +106,4 @@ export const youtubeThumbnails = {
   thumbFive: thumbFive,
   thumbSix: thumbSix,
   thumbSeven: thumbSeven,
-
 };

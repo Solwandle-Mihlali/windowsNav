@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import TaskBar from "./components/TaskBar";
+import Login from "./components/login";
 
 
 interface MainAppProps {
@@ -8,9 +9,12 @@ interface MainAppProps {
 }
 
 function App({}: MainAppProps) {
+  const [loginValid, setLoginValid] = useState(Boolean)
   return (
     <>
-      <TaskBar />
+    {
+      loginValid ?  <TaskBar /> : <Login handlePasswordConfirmed={()=>setLoginValid(true)}/>
+    }
     </>
   );
 }

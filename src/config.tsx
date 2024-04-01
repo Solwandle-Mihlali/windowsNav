@@ -4,3 +4,9 @@ export enum Configuration {
   UPLOADS_ID = "UUZGSIqguQ-g6DNf32zqu9NQ"
      
 }
+
+
+export enum AllowedUser {
+  email = "mihlali@semicolon.com",
+  password = "123"
+}
