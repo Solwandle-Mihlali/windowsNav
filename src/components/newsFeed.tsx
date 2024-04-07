@@ -1,4 +1,10 @@
-import { useState, useEffect } from "react";
+
+
+{
+  /*
+  
+  
+  import { useState, useEffect } from "react";
 import { newsFeed } from "../interfaces/newsFeedInterface";
 
 const api_key = "6b968bf3d26641f2b19882337e62654c";
@@ -38,3 +44,6 @@ const api_key = "6b968bf3d26641f2b19882337e62654c";
 
   }
   export default NewsFeed
+  */
+
+}

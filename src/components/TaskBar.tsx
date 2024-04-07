@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import "./taskBar.css";
 import { icons } from "../icons/icons";
 import WindowsSearch from "./windowsSearch";
 import Youtube from "./yt";
-import { Configuration } from "../config";
+
 
 const TaskBar: React.FC = () => {
   //hidden components
@@ -15,11 +15,11 @@ const TaskBar: React.FC = () => {
 
   const handleTaskbarIconClick = (iconToAdd: string) => {
     console.log(iconToAdd);
-
-    backgroundAppsArr?.forEach((val, ind) => {
+    backgroundAppsArr?.forEach((val) => {
       val.includes(iconToAdd);
     });
     backgroundAppsArr.push(iconToAdd);
+    setBackgroundAppsArr(backgroundAppsArr)
   };
   return (
     <>

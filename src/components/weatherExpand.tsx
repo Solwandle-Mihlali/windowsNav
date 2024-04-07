@@ -1,7 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { icons, images } from "../icons/icons";
 import { newsFeed } from "../interfaces/newsFeedInterface";
-import NewsFeed from "./newsFeed";
+
+{
+  /*
+  import NewsFeed from "./newsFeed";
+  */
+}
 
 function WeatherExpand() {
   const currentDate = new Date();
@@ -69,7 +74,9 @@ function WeatherExpand() {
     fetchData();
   }, []);
 
-  const weatherAPI = "ffcad951689e806fe536375d8ab78b41  ";
+  {
+    /*
+    const weatherAPI = "ffcad951689e806fe536375d8ab78b41  ";
   const [searchedCity, setSearchedCity] = useState("Cape Town");
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${weatherAPI}`;
 
@@ -87,21 +94,12 @@ function WeatherExpand() {
 
     fetchDataTwo();
   }, [searchedCity]);
+     */
+  }
 
   newsFeed.map((vals) => {
     console.log(vals.imgUrl);
   });
-
-  const replacementAutorNames = [
-    "David Goggins",
-    "Josh Myers",
-    "Kendrick Lamar",
-    "Josh Myers",
-    "Dumisani Nkosi",
-    "Tafazdzwa Blessing",
-    "J Cole",
-    "Mihlali Solwandle",
-  ];
 
   return (
     <>
@@ -137,13 +135,7 @@ function WeatherExpand() {
               }}
             >
               <div className="top">
-                <select
-                  name="#"
-                  id="cities"
-                  onChange={(e) => {
-                    setSearchedCity(e.target.value);
-                  }}
-                >
+                <select name="#" id="cities">
                   {cities?.map((val, index) => {
                     return (
                       <option key={index} value={val}>
@@ -162,15 +154,25 @@ function WeatherExpand() {
                   <div id="marketStatCell">
                     <p>
                       <span>{v.pair}</span>
-                      <span id="desc">{v.desc.slice(0,25)}...</span>
+                      <span id="desc">{v.desc.slice(0, 25)}...</span>
                     </p>
                     <p>
-                      <img src={v.percentage < 1 ? images.chartRed : images.chartGreen} alt="stockUp" />
+                      <img
+                        src={
+                          v.percentage < 1 ? images.chartRed : images.chartGreen
+                        }
+                        alt="stockUp"
+                      />
                     </p>
                     <p>
-                      <span id="price" style={{
-                        color: v.percentage < 1 ? "#fa1414": "#1EE317"
-                      }}>{v.price}</span>
+                      <span
+                        id="price"
+                        style={{
+                          color: v.percentage < 1 ? "#fa1414" : "#1EE317",
+                        }}
+                      >
+                        {v.price}
+                      </span>
                       <span id="percent">{v.percentage}%</span>
                     </p>
                   </div>
@@ -194,16 +196,16 @@ function WeatherExpand() {
               <div className="bottom"></div>
             </div>
           </div>
-          <div className="right">
+
+          {/*
+            <div className="right">
             {newsFeed?.map((val, index) => {
               return (
                 <div className="article">
-                  <div className="img">
-                  
-                  </div>
+                  <div className="img"></div>
                   <div className="info">
                     <span id="title">
-                      {/*val.author
+                      val.author
                         ? JSON.stringify(val.author)
                             .replace(/"/g, "")
                             .slice(0, 20)
@@ -211,14 +213,15 @@ function WeatherExpand() {
                         ? replacementAutorNames[index]
                         : JSON.stringify(val.author)
                             .replace(/"/g, "")
-              .slice(0, 20)*/}
+              .slice(0, 20)
                     </span>
-                    <span id="desc">{/*val.title*/}</span>
+                    <span id="desc">{val.title}</span>
                   </div>
                 </div>
               );
             })}
           </div>
+          */}
         </main>
       </div>
     </>

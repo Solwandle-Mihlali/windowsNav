@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./yt.css";
 import { icons, youtubeThumbnails } from "../icons/icons";
 import { Configuration } from "../config";
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
+
 
 interface YoutubeProps {
   isVisible: boolean;
 }
 
 const Youtube: React.FC<YoutubeProps> = ({ isVisible }) => {
-  const [ytHeight, setYtHeight] = useState(90);
+  const ytHeight = useState(90);
   const [darkModeActiveState, setDarkModeActiveState] = useState(false);
   const [darkModeClass, setDarkModeClass] = useState("youtube-container")
   const api_key = Configuration.YT_API_KEY;
