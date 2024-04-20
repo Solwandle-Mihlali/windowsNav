@@ -3,6 +3,7 @@ import "./taskBar.css";
 import { icons } from "../icons/icons";
 import WindowsSearch from "./windowsSearch";
 import Youtube from "./yt";
+import { Link , Routes, Route} from "react-router-dom";
 
 
 const TaskBar: React.FC = () => {
@@ -46,7 +47,7 @@ const TaskBar: React.FC = () => {
         </div>
       )}
       {youtubeSection && (
-        <Youtube isVisible={youtubeSection == true ? true : false} />
+        <Link to={""} />
       )}
       <div className="taskBarHolder">
         <div className="taskBarSections"></div>

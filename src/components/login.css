@@ -1,72 +1,97 @@
-.loginMain{
-    width: 100%;
-    height: 100vh;
-    z-index: 2;
-    backdrop-filter: blur(20px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.loginMain {
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.loginMain form{
-    width: 20%;
-    border-radius: 10px;
-    height:40vh;
-    z-index: 2;
-    background: rgba(101, 101, 101, 0.336);
-    box-shadow: 3px 3px 10px rgba(27, 27, 27, 0.11), 3px 3px 10px rgba(27, 27, 27, 0.11);
-    backdrop-filter: blur(20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5%;
-    border: solid 1px rgb(208, 208, 208);
+.loginMain form {
+  width: 40%;
+  border-radius: 10px;
+  height: 55vh;
+  z-index: 2;
+  background: rgba(49, 49, 49, 0.336);
+  box-shadow: 3px 3px 10px rgba(27, 27, 27, 0.11),
+    3px 3px 10px rgba(27, 27, 27, 0.11);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  border: solid 1px rgb(208, 208, 208);
 }
 
-.loginMain form label{
-    width: 100%;
-    min-height: 3.5vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgb(0, 0, 0);
-    gap: 1%;
-    font-weight: bold;
+.loginMain form label {
+  width: 80%;
+  min-height: 3.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 4px black;
+  gap: 1%;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
-.loginMain form label input{
-    width:70%;
-    min-height: 3.5vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgb(0, 0, 0);
-    background: transparent;
-    border: none;
-    border-bottom:solid 1px rgb(185, 185, 185) ;
-    padding-left: 10px;
-    gap: 1%;
+.loginMain form label input {
+  width: 100%;
+  font-size: 0.7rem;
+  min-height: 3.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px rgb(185, 185, 185);
+  padding-left: 0px;
+  gap: 1%;
 }
 
-input :focus{
-    border: none;
-    outline: none;
+input :focus {
+  border: none;
+  outline: none;
 }
 
 .loginMain form button {
-    width: 30%;
-    min-height: 4vh;
-    padding: 0.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background:red ;
-    border: none;
-    gap: 1%;
-    border-radius: 5px;
+  width: 30%;
+  min-height: 4vh;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: red;
+  border: none;
+  gap: 1%;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 1080px) {
+  .loginMain form {
+    width: 80%;
+    height: 70vh;
+    background: rgba(30, 30, 30, 0.336);
+  }
+
+  .loginMain form button {
+    padding: 0.4rem;
+    font-size: 1.3rem;
+  }
+
+  .loginMain form label {
+    font-size: 1.5rem;
+  }
+
+  .loginMain form label input {
+    font-size: 1.3rem;
+  }
 }
