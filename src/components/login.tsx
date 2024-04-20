@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../components/login.css";
 import { AllowedUser } from "../config";
 
 interface LoginProps {
   handlePasswordConfirmed: () => void;
 }
+
 const Login: React.FC<LoginProps> = ({ handlePasswordConfirmed }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+
+  // Retrieve stored email and password from localStorage when the component mounts
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("userEmail");
+    const storedPassword = localStorage.getItem("userPassword");
+    
+    if (storedEmail && storedPassword) {
+      setUserEmail(storedEmail);
+      setUserPassword(storedPassword);
+    }
+  }, []);
 
   const currentUsers = [
     {
@@ -28,22 +40,23 @@ const Login: React.FC<LoginProps> = ({ handlePasswordConfirmed }) => {
     );
 
     if (isValidUser) {
-        handlePasswordConfirmed()
+      // Save credentials to localStorage if login is successful
+      localStorage.setItem("userEmail", enteredEmail);
+      localStorage.setItem("userPassword", enteredPassword);
+      handlePasswordConfirmed();
     } else {
       alert("Credentials don't match");
     }
   };
+
   return (
     <div className="loginMain">
       <form
         onSubmit={(e) => {
-          e.preventDefault(), validateCredentials(e, userEmail, userPassword);
+          validateCredentials(e, userEmail, userPassword);
         }}
-
-      
       >
-        <label htmlFor="#">
-          {" "}
+        <label htmlFor="email">
           Email
           <input
             type="text"
@@ -51,8 +64,7 @@ const Login: React.FC<LoginProps> = ({ handlePasswordConfirmed }) => {
             onChange={(e) => setUserEmail(e.target.value)}
           />
         </label>
-        <label htmlFor="#">
-          {" "}
+        <label htmlFor="password">
           Password
           <input
             type="password"
@@ -60,7 +72,7 @@ const Login: React.FC<LoginProps> = ({ handlePasswordConfirmed }) => {
             onChange={(e) => setUserPassword(e.target.value)}
           />
         </label>
-        <button>Log In</button>
+        <button type="submit">Log In</button>
       </form>
     </div>
   );

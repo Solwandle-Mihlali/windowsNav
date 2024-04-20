@@ -7,6 +7,11 @@
   font-family: sans-serif;
 }
 
+a {
+  color: rgb(25, 25, 25);
+  text-decoration: none;
+}
+
 .youtube-container-dark {
   backdrop-filter: blur(20px);
   background: var(--gradientBgDark);
@@ -20,6 +25,7 @@
   animation: slideUp 1s ease-in-out forwards;
   transition: opacity 0.5s background 3s;
   margin-bottom: 2%;
+  margin-left: 4rem;
 }
 .youtube-container {
   backdrop-filter: blur(20px);
@@ -34,6 +40,7 @@
   animation: slideUp 1s ease-in-out forwards;
   transition: opacity 0.5s;
   margin-bottom: 2%;
+  margin-left: 4rem;
 }
 
 .ytHeader {
@@ -253,7 +260,7 @@ main .sidePanel ul {
   width: 20%;
   height: 100%;
   display: flex;
-  align-items: left;
+  align-items: center;
   flex-direction: column;
   justify-content: flex-start;
   padding-left: 0.3rem;
@@ -261,10 +268,14 @@ main .sidePanel ul {
 }
 
 .channelInfo .imgSection img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  margin-left: 0.4-rem;
+  height: 40px; /* Keep the height fixed */
+  width: 40px; /* Keep the width fixed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Ensure the image is circular */
+  margin-left: 0.8rem; /* Fix typo in 'rem' spacing */
+  object-fit: cover; 
 }
 
 .channelInfo .infoSection {
@@ -346,4 +357,22 @@ main .sidePanel ul {
   border-radius: 50%;
   padding: 0.3rem;
   margin: 7%;
+}
+
+@media screen and (min-width: 360px) and (max-width: 1080px) {
+  .youtube-container {
+    backdrop-filter: blur(20px);
+    background: v;
+    box-shadow: 3px 3px 10px rgb(44, 44, 44);
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    animation: slideUp 1s ease-in-out forwards;
+    transition: opacity 0.5s;
+    margin-bottom: 2%;
+    margin-left: 4rem;
+  }
 }
